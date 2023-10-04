@@ -1,0 +1,44 @@
+<nav class="navbar bg-dark navbar-dark">
+    <div class="container-fluid">
+        <span class="navbar-brand">
+            <i class="bi bi-chat-dots-fill"></i>
+            &nbsp;Foro Dudas ITSCH
+        </span>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <div class="card mt-3">
+                <div class="card-header text-center">Inicio de sesi&oacute;n {{email}} </div>
+                <div class="card-body">
+                    <div class="input-group">
+                        <span class="input-group-text">
+                            <i class="bi bi-envelope-at-fill"></i>
+                        </span>
+                        <input type="email" class="form-control" placeholder="Correo Electrónico" [(ngModel)]="email">
+                    </div>
+
+                    <div class="input-group mt-3">
+                        <span class="input-group-text">
+                            <i class="bi bi-key-fill"></i>
+                        </span>
+                        <input type="password" class="form-control" placeholder="Contraseña" [(ngModel)]="pass">
+                    </div>
+                    <div class="alert alert-danger mt-3" role="alert" *ngIf="ShowError">
+                        Contraseña o usuario incorrectos, wacha ahí!
+                    </div>
+                </div>
+                <div class="card-footer text-end">
+                    <button class="btn btn-primary" (click)="login()" [disabled]="ShowLoading">
+                        <div class="spinner-border" *ngIf="ShowLoading"></div>
+                        Entrar
+                    </button>
+                </div>
+            </div>
+            <a href="signup" class="link-success">Registrarse</a>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>

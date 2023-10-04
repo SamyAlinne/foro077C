@@ -1,0 +1,43 @@
+<nav class="navbar bg-dark navbar-dark">
+    <div class="container-fluid">
+        <span class="navbar-brand">
+            <i class="bi bi-chat-dots-fill"></i>
+            &nbsp;Foro Dudas ITSCH
+        </span>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <div class="card mt-3">
+                <div class="card-header text-center">Registro de usuario</div>
+                <div class="card-body">
+                    <div class="input-group">
+                        <span class="input-group-text">
+                            <i class="bi bi-envelope-at-fill"></i>
+                        </span>
+                        <input type="email" class="form-control" placeholder="Correo Electrónico" [(ngModel)]="email">
+                    </div>
+
+                    <div class="input-group mt-3">
+                        <span class="input-group-text">
+                            <i class="bi bi-key-fill"></i>
+                        </span>
+                        <input type="password" class="form-control" placeholder="Contraseña" [(ngModel)]="pass">
+                    </div>
+                    <div class="alert alert-danger mt-3" role="alert" *ngIf="ShowError">
+                        Oh no!, algo salió mal en tu registro :c
+                    </div>
+                </div>
+                <div class="card-footer text-end">
+                    <button class="btn btn-primary" (click)="registro()" [disabled]="ShowLoading">
+                        <div class="spinner-border" *ngIf="ShowLoading"></div>
+                        Registrar
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
